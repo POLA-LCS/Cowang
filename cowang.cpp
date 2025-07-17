@@ -50,6 +50,6 @@ int main(int argc, char* argv[]) {
     } catch(const CowangError& error) {
         printf("ln: %i | %s\n", parser.lexer.lines.size(), error.what());
     }
-
+    
     return 0;
 }

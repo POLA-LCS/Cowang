@@ -23,7 +23,7 @@ Token Lexer::getNextToken() {
     }
 
     if(!this->hasMoreTokens())
-        return Token{TokenType::END_OF_FILE};
+        return Token(TokenType::END_OF_FILE);
 
     std::string segment(this->code.data() + pos, this->code.size() - pos);
 
@@ -39,10 +39,10 @@ Token Lexer::getNextToken() {
             }
 
             if(tok_type == TokenType::LITERAL_STRING) {
-                return Token{tok_type, matched_string.substr(1, matched_string.length() - 2)};
+                return Token(tok_type, matched_string.substr(1, matched_string.length() - 2));
             }
 
-            return Token{tok_type, matched_string};
+            return Token(tok_type, matched_string);
         }
     }
 
